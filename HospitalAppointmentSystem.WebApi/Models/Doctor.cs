@@ -16,8 +16,37 @@ public sealed class Doctor : Entity<int>
         Patients = patients;
         Appoinments = appoinments;
     }
-    public string Name { get; set; }
-    public string Surname { get; set; }
+    private string name;
+    private string surname;
+
+    public string Name
+    {
+        get
+        {
+            return Name;
+        }
+        set
+        {
+            if (string.IsNullOrEmpty(value))
+            {
+                throw new Exception("İsim alanı boş geçilemez");
+            }
+            name = value;
+        }
+    }
+    public string Surname {
+        get
+        {
+            return surname;
+        }
+        set 
+        { 
+            if(string.IsNullOrEmpty(value))
+            {
+                throw new Exception("Soyisim alanı boş geçilemez");
+            }
+        } 
+    }
     public Branch Branch { get; set; }
     public List<Patient> Patients { get; set; }
     public List<Appointment> Appoinments { get; set; }

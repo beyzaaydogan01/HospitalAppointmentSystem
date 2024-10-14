@@ -20,9 +20,8 @@ public class AppointmentMapper
         return new AppointmentResponseDto
         (
             AppointmentDate : appointment.AppointmentDate,
-            Doctor : appointment.Doctor,
-            Patient : appointment.Patient
-
+            DoctorName : appointment.Doctor.Name,
+            PatientName : appointment.Patient.Name
         );
     }
 }
